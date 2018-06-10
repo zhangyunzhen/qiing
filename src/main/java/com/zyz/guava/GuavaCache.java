@@ -1,11 +1,9 @@
 package com.zyz.guava;
 
-import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import org.junit.Test;
-import sun.applet.Main;
 
 import java.util.HashMap;
 import java.util.Map;
