@@ -31,12 +31,14 @@ public class HeapOutOfMemery {
      * @param args 
      * @see
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         List<User> list = new ArrayList<>();
         int i = 0;
+        Thread.sleep(10000);
         while(true){
             list.add(new User());
             System.out.println(i++);
+            throw  new Exception();
         }
     }
 }
