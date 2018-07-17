@@ -138,8 +138,9 @@ public class ThreadPool {
                             e.printStackTrace();
                         }
                     }
-                    if (!taskQueue.isEmpty())
+                    if (!taskQueue.isEmpty()) {
                         r = taskQueue.remove(0);// 取出任务
+                    }
                 }
                 if (r != null) {
                     r.run();// 执行任务
