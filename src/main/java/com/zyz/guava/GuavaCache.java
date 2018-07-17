@@ -42,7 +42,7 @@ public class GuavaCache {
 
 
     @Test
-    public void test() throws InterruptedException {
+    public void test() throws InterruptedException, ExecutionException {
         cache.put("aa", "aa");
         String aa = cache.getIfPresent("aa");
         System.out.println(aa);
@@ -51,12 +51,16 @@ public class GuavaCache {
         Thread.sleep(10000L);
         //显示为null   因为缓存的过期时间设置为10秒
         System.out.println(cache.getIfPresent("aa"));
+        System.out.println(cache.get("aa"));
     }
 
     @Test
-    public void test2() throws ExecutionException {
+    public void test2() throws ExecutionException, InterruptedException {
         String bb = cache.get("cc");
         System.out.println(bb);
+        Thread.sleep(10000L);
+        String bb1 = cache.get("cc");
+        System.out.println(bb1);
     }
 
     /**
@@ -77,5 +81,6 @@ public class GuavaCache {
         System.out.println(cc1);
         Thread.sleep(10000L);
         System.out.println(cache.getIfPresent("cc"));
+        System.out.println(cache.get("cc"));
     }
 }
