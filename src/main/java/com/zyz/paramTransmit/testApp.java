@@ -35,7 +35,7 @@ public class testApp {
     }
     
     @Test
-    public static void test1() {
+    public void test1() {
         int a = 3;
         test(a);
         System.out.println(a);

@@ -11,6 +11,7 @@
 
 package com.zyz;
 
+import com.google.common.collect.Maps;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -70,5 +71,24 @@ public class test {
         //bigdecimal也存在精度损失，但相比较float,double来说，精确度更高
         BigDecimal bigDecimal = new BigDecimal(0.1);
         System.out.println(bigDecimal.multiply(BigDecimal.valueOf(3)).toString());
+    }
+
+    /**
+     * 将方法参数定义为final类型，标识该参数内存地址不可变，但值可以变(指对象)
+     *          常量的值在编译期间就已经确定了。
+     *
+     */
+    @Test
+    public void testFinal(){
+        Map<String,String> map = Maps.newHashMap();
+        String aa = testFianl(map, "aa");
+        System.out.println(map.get("aa"));
+        System.out.println(aa);
+    }
+
+    public String testFianl(final Map<String,String> map,final String aa){
+        map.put("aa","aaa" );
+        //aa = "bb";    编译会不通过
+        return aa;
     }
 }
