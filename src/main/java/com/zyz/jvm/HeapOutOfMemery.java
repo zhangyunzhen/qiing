@@ -11,6 +11,8 @@
 
 package com.zyz.jvm;
 
+import com.zyz.User;
+
 import java.util.ArrayList;
 import java.util.List;
 

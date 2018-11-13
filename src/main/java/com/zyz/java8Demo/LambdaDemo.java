@@ -12,8 +12,13 @@
 package com.zyz.java8Demo;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.function.Supplier;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
+import com.alibaba.fastjson.JSON;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 /**
@@ -49,6 +54,8 @@ public class LambdaDemo {
     
     
     public static void main(String[] args) {
-        Arrays.asList("aaa","bbb","ccc").forEach(e -> System.out.println(e+"函数式编程"));
+       // Arrays.asList("aaa","bbb","ccc").forEach(e -> System.out.println(e+"函数式编程"));
+        List<String> collect = Arrays.asList("aaa", "bbb", "ccc").stream().filter(p -> StringUtils.equalsIgnoreCase("aaa", p)).collect(Collectors.toList());
+        System.out.println(JSON.toJSONString(collect));
     }
 }

@@ -16,13 +16,19 @@ import java.util.List;
  */
 public class GuavaColletion {
 
-    public List<String> list;
+    public final List<String> list = Lists.newArrayList();
 
     public List<Integer> list1;
 
+    public static final String test;
+
+    static {
+        test = "a";
+    }
+
     @Before
     public void listCreate() {
-        list = Arrays.asList("a", "c", "b", "d", "e", "f");
+        //list = Arrays.asList("a", "c", "b", "d", "e", "f");
         list1 = Arrays.asList(1, 6, 3, 4, 9, 7);
     }
 
@@ -57,7 +63,7 @@ public class GuavaColletion {
         System.out.println(list);
 */
         //从大到小排序
-        Collections.sort(list1, (p1, p2) -> p1> p2 ? -1: 0);
+        Collections.sort(list1, (p1, p2) -> p1 > p2 ? -1 : 0);
         System.out.println(list1);
     }
 
@@ -65,7 +71,7 @@ public class GuavaColletion {
      * 翻转遍历
      */
     @Test
-    public void reverse(){
+    public void reverse() {
         List<String> reverse = Lists.reverse(list);
         System.out.println(reverse);
     }
@@ -74,13 +80,23 @@ public class GuavaColletion {
      * 转换
      */
     @Test
-    public void transform(){
+    public void transform() {
         List<String> transform = Lists.transform(list, new Function<String, String>() {
             @Override
             public String apply(String s) {
-                return s+"a";
+                return s + "a";
             }
         });
         System.out.println(transform);
+    }
+
+
+
+    final class A {
+        public final String a;
+
+        A(String a) {
+            this.a = a;
+        }
     }
 }

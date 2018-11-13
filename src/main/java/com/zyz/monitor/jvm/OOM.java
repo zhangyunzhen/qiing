@@ -1,5 +1,6 @@
 package com.zyz.monitor.jvm;
 
+import com.zyz.User;
 import org.junit.Test;
 
 import java.util.ArrayList;
