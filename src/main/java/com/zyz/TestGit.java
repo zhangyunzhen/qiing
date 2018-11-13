@@ -10,5 +10,6 @@ public class TestGit {
 
     public static void main(String[] args) {
         System.out.println("zyz-A  first commit");
+        System.out.println("zyz-B  first commit");
     }
 }
