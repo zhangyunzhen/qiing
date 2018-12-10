@@ -14,7 +14,7 @@ package com.zyz.java8Demo;
 
 /**
  *  接口的默认方法
- *  函数式接口（只有一个方法（默认方法不包括））
+ *  函数式接口（只有一个方法（默认方法 静态方法不包括））
  * @author zhangyunzhen
  * @version 2017年12月19日
  * @see DefaultMethodInterf
@@ -24,18 +24,26 @@ package com.zyz.java8Demo;
 public interface DefaultMethodInterf {
 
     void test();
-    
+
+
+    /**
+     *  静态方法（接口可以写实现）
+     */
+    static void test1(){
+        System.out.println("我是静态方法");
+    }
+
     /**
      * Description: <br>
      *  默认方法
-     * 
-     * @param name 
+     *
+     * @param name
      * @see
      */
     default void defaultMethod(String name){
         System.out.println("我是默认方法"+name);
     }
-        
+
     default void defaultMetho1(String name){
         System.out.println("我是默认方法"+name);
     }

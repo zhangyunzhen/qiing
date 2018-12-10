@@ -6,6 +6,12 @@ import java.util.List;
 /**
  * @Author: YunzhenZhang
  * @Description: 线程池类，线程管理器：创建线程，执行任务，销毁线程，获取线程基本信息
+ *
+ * 实现思路：
+ *      使用一个任务队列（数组）存放需要执行的任务
+ *      初始化一个线程池互斥的获取任务队列中的任务
+ *      每次往任务队列中加入任务得时候触发notifyAll,触发所有线程池中所有线程执行获取任务。
+ *
  * @Date: Created in 16:45 2018/7/12
  */
 public class ThreadPool {

@@ -11,6 +11,7 @@
 
 package com.zyz.java8Demo;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Supplier;
@@ -18,6 +19,7 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import com.alibaba.fastjson.JSON;
+import com.google.common.collect.Lists;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
@@ -41,7 +43,32 @@ public class LambdaDemo {
         DefaultMethodInterf inter = new DefauMethImp();
         inter.defaultMethod("hahha");
         inter.defaultMetho1("ccc");
+
+        // 测试静态方法
+        DefaultMethodInterf.test1();
     }
+
+    /**
+     *  方法引用
+     *      需配合lamda表达式使用
+     */
+    @Test
+    public void testMethodRef(){
+        DefauMethImp inter = new DefauMethImp();
+
+        // 构造器引用
+        inter.methodRef(User::new);
+        inter.methodRef(()->new User());
+
+        // 静态方法引用
+        // 需要注意： 静态方法的参数需要是User
+        ArrayList<User> objects = Lists.newArrayList();
+        objects.forEach(User::a);
+        // 成员方法引用
+        objects.forEach(User::b);
+
+    }
+
     /** 
      *  函数式接口（只包含一个抽象方法 ）
      * @see

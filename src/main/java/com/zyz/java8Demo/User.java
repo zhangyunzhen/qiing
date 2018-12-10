@@ -11,11 +11,25 @@
 
 package com.zyz.java8Demo;
 
+import com.alibaba.fastjson.JSON;
+
 public class User {
 
     private String username;
     
     private String userpwd;
+
+    public User() {
+
+    }
+
+    public static void a(User user){
+        System.out.println("我是User静态方法"+ JSON.toJSONString(user));
+    }
+
+    public  void b(){
+        System.out.println("我是User成员方法");
+    }
 
     public String getUsername() {
         return username;

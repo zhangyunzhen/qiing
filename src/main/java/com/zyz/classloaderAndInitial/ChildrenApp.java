@@ -26,7 +26,7 @@ public class ChildrenApp {
     private  String a;
     
     private long bb;
-    
+
     public static void main(String[] args) {
         ChildrenApp app = new ChildrenApp();
         app.setBb(null);

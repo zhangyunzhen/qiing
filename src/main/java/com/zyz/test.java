@@ -11,6 +11,8 @@
 
 package com.zyz;
 
+import com.google.common.base.CharMatcher;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import org.junit.Test;
 
@@ -137,6 +139,12 @@ public class test {
 
     @Test
     public void test() {
+  /*      System.out.println(CharMatcher.DIGIT.retainFrom("0S"));
+        System.out.println(CharMatcher.DIGIT.retainFrom("S"));
+        System.out.println(  CharMatcher.DIGIT.removeFrom("S"));*/
+
+        ArrayList<String> strings = Lists.newArrayList("1", "2", "3");
+        List<String> list = strings.subList(0, 5);
     }
 
 

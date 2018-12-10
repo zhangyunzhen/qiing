@@ -11,11 +11,19 @@
 
 package com.zyz.java8Demo;
 
-public class DefauMethImp implements DefaultMethodInterf{
+import com.alibaba.fastjson.JSON;
+
+import java.util.function.Supplier;
+
+public class DefauMethImp implements DefaultMethodInterf {
 
     @Override
     public void test() {
-        
+
+    }
+
+    public void methodRef(Supplier<User> user) {
+        System.out.println(JSON.toJSONString(user.get()));
     }
 
 }
